@@ -5,9 +5,6 @@ import java.util.Scanner;
 public class CounterStrike {
     public static void main(String[] args) {
 
-        int numberOfPlayersTeam1 = 5;
-        int numberOfPlayersTeam2 = 5;
-
         Scanner sc = new Scanner(System.in);
 
         System.out.println("Please enter information on the first team:");
@@ -130,6 +127,8 @@ public class CounterStrike {
         System.out.println("Xavier: " + teammate2_4 + " kills");
         System.out.println("Irving: " + teammate2_5 + " kills");
 
+        int numberOfPlayersTeam1 = 5;
+        int numberOfPlayersTeam2 = 5;
 
         double averageTeam1 = (teammate1_1 + teammate1_2 + teammate1_3 + teammate1_4 + teammate1_5)/(double) numberOfPlayersTeam1;
         double averageTeam2 = (teammate2_1 + teammate2_2 + teammate2_3 + teammate2_4 + teammate2_5)/(double) numberOfPlayersTeam2;
