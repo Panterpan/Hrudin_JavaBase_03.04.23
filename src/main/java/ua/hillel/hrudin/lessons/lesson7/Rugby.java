@@ -18,9 +18,8 @@ public class Rugby {
             players2[i] = (int) ((Math.random() * (max - min + 1)) + min);
             sumAge2 += players2[i];
         }
-       double average1 = sumAge1/ players1.length;
-       double average2 = sumAge2/ players2.length;
-
+        double average1 = sumAge1 / players1.length;
+        double average2 = sumAge2 / players2.length;
         System.out.println(Arrays.toString(players1));
         System.out.println(Arrays.toString(players2));
         System.out.println("Cумарний вік першої команди: " + sumAge1);
