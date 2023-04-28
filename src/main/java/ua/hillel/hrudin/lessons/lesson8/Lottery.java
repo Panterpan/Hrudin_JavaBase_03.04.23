@@ -16,11 +16,12 @@ public class Lottery {
                 sc.nextLine();
                 if (player[i] > 9 || player[i] < 0) {
                     System.out.println("Wrong, enter integer from 0 to 9!");
-                    System.exit(0);
+                    i--;
                 }
             } else {
                 System.out.println("Wrong integer, try again");
-                System.exit(0);
+                i--;
+                sc.nextLine();
             }
 
         }
