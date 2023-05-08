@@ -7,20 +7,28 @@ public class MatrixTransposition {
         Scanner sc = new Scanner(System.in);
         int M = 0;
         int N = 0;
-        System.out.println("Enter integer to M:");
         for (int i = 0; i < 1; i++) {
+            System.out.println("Enter integer to M:");
             if (sc.hasNextInt()){
                 M = sc.nextInt();
+                if (M <= 0) {
+                    System.out.println("Wrong integer, try again!");
+                    i--;
+                }
             }else {
                 System.out.println("Wrong integer, try again!");
                 i--;
             }
             sc.nextLine();
         }
-        System.out.println("Enter integer to N:");
         for (int i = 0; i < 1; i++) {
+            System.out.println("Enter integer to N:");
             if (sc.hasNextInt()) {
                 N = sc.nextInt();
+                if (N <= 0) {
+                    System.out.println("Wrong integer, try again!");
+                    i--;
+                }
             } else {
                 System.out.println("Wrong integer, try again!");
                 i--;
