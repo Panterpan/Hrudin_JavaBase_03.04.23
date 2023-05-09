@@ -1,6 +1,7 @@
 package ua.hillel.hrudin.lessons.extraHomework;
 
 import java.util.Arrays;
+import java.util.Scanner;
 
 public class AdditionalTask {
     public static void main(String[] args) {
@@ -30,8 +31,8 @@ public class AdditionalTask {
             mas3[i] = mas1[i];
             count++;
         }
-        for (int j = 0; j < mas2.length; j++) {
-            mas3[count++] = mas2[j];
+        for (int item : mas2) {
+            mas3[count++] = item;
         }
         System.out.println(Arrays.toString(mas1));
         System.out.println(Arrays.toString(mas2));
@@ -101,9 +102,9 @@ public class AdditionalTask {
 
         // Задание:         Найдите первый положительный элемент массива и выведите его на экран.
         int[] values1 = {-1, -5, -6, -3, -10, -5, 3, 4, -1, -8, 1, -10, 3};
-        for (int i = 0; i < values1.length; i++) {
-            if (values1[i] > 0) {
-                System.out.println(values1[i]);
+        for (int k : values1) {
+            if (k > 0) {
+                System.out.println(k);
                 break;
             }
         }
@@ -111,17 +112,90 @@ public class AdditionalTask {
         // Выведите на экран только те элементы, которые больше этого среднего арифместического значения
         int[] values3 = {10, 20, 48, 6, 11, 9, 125, 1, 8, 0, 3, 255, 77, 11, 170, 4, 28};
         int summ = 0;
-        for (int i = 0; i < values3.length; i++) {
-            summ += values3[i];
+        for (int k : values3) {
+            summ += k;
         }
         double average = (double) summ / values3.length;
         System.out.println(summ);
         System.out.println(average);
-        for (int i = 0; i < values3.length; i++) {
-            if (values3[i] > average) {
-                System.out.print(values3[i] + " ");
+        for (int k : values3) {
+            if (k > average) {
+                System.out.print(k + " ");
             }
         }
+        System.out.println(" ");
 
+        //Запитайте у користувача кількість елементів масиву. Виходячи з даних, які ввів користувач створіть масив на ту
+        //кількість елементів, яку передав користувач. у кожному індексі масиву зберігайте чило яке показуватиме номер елемента масиву.
+        Scanner sc = new Scanner(System.in);
+        int value = 0;
+        for (int i = 0; i < 1; i++) {
+            System.out.println("Enter integer to Value:");
+            if (sc.hasNextInt()) {
+                value = sc.nextInt();
+                if (value <= 0) {
+                    System.out.println("ай ай ай");
+                    i--;
+                }
+                }else {
+                System.out.println("Wrong integer");
+                i--;
+            }
+            sc.nextLine();
+        }
+        int[] valuemass = new int[value];
+        System.out.println(Arrays.toString(valuemass));
+        for (int i = 0; i < valuemass.length; i++) {
+            valuemass[i] = i;
+        }
+        System.out.println(Arrays.toString(valuemass));
+
+        //Задание:Данно массив.Поменяйте элемент с максимальным значением местами с элементом с минимальным значением.
+        int[] valuesss = {10, 20, 4, 6, 11, 9, 125, 1, 8, 0, 3};
+        int max = valuesss[0];
+        int min = valuesss[0];
+        int max1 = 0;
+        int min1 = 0;
+        for (int i = 0; i < valuesss.length; i++) {
+            if (valuesss[i] > max) {
+                max = valuesss[i];
+                max1 = i;
+            } else if (valuesss[i] < min) {
+                min = valuesss[i];
+                min1 = i;
+            }
+        }
+        System.out.println(max + " "+ max1 + " "+min+ " "+min1);
+        int tmp = valuesss[max1];
+        valuesss[max1] = valuesss[min1];
+        valuesss[min1] = tmp;
+        System.out.println(valuesss[6] + " "+ valuesss[9]);
+
+        //Дано массив.Создайте на оснoвое значений этого массива два новых массива.В один массив поместите все четные значения,
+        // а во второй все нечетные.Выведите на экран значения, которые вошли в первый массив и во второй массив.
+        int[] value15 = {10, 20, 5, 7, 11, 8, 125, 4, 8, 3, 23};
+        int count12 = 0;
+        for (int i = 0; i < value15.length; i++) {
+            if (value15[i] % 2 == 0){
+                System.out.print(value15[i]+ " ");
+                count12++;
+            }
+        }
+        System.out.println(count12);
+        int[] parni = new int[count12];
+        int[] neParni = new int[value15.length - count12];
+
+        for (int i = 0, c = 0, k = 0; i < value15.length; i++) {
+            if (value15[i] % 2 == 0){
+                parni[c] = value15[i];
+                c++;
+            } else {
+                neParni[k] = value15[i];
+                k++;
+            }
+            }
+        System.out.println(Arrays.toString(parni));
+        System.out.println(Arrays.toString(neParni));
     }
 }
+
