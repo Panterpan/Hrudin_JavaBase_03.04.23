@@ -6,7 +6,7 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        int users = 2;
+        int users = 1;
         UserInformation [] userInformation = new UserInformation[users];
         for (int i = 0; i < userInformation.length; i++) {
             System.out.println("Введіть ім'я для клієнта " + (i + 1));
@@ -122,6 +122,7 @@ public class Main {
         }
         userInformation[0].printAccountInfo();
         userInformation[0].setSurname("Конончук");
+        userInformation[0].printAccountInfo();
         System.out.println("userInformation[0].getAge() = " + userInformation[0].getAge());
     }
 }
