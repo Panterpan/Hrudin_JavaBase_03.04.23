@@ -2,7 +2,6 @@ package ua.hillel.hrudin.lessons.lesson12;
 
 import java.util.Arrays;
 import java.util.Scanner;
-
 public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
